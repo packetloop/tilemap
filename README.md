@@ -9,41 +9,42 @@ Prerequisites
 
 1. Install ImageMagick
 
-    brew install ImageMagick
+```bash
+brew install ImageMagick
+```
 
 2. Install dependencies
 
-    npm install
-    
+```bash
+npm install
+```    
+
 3. Download source image and put it to `in` folder
 
 Image example: http://eoimages.gsfc.nasa.gov/images/imagerecords/55000/55167/land_lights_16384.tif
-(From: http://visibleearth.nasa.gov/view.php?id=55167)
+From: http://visibleearth.nasa.gov/view.php?id=55167
 
 
 Running
 -----
-
 1. This will generate 2048x2048 tiles into `out/2048`
-
-    npm start in/land_lights_16384.tif 2048
-  
+```bash
+npm start in/land_lights_16384.tif 2048
+```  
 2. This will generate 256x256, 515x512 and 1024x1024 tiles into corresponding sub-folders of `out`
-
-    npm start in/land_lights_16384.tif 256,512,1024
-  
+```bash
+npm start in/land_lights_16384.tif 256,512,1024
+``` 
 Usage
 -----
-
 To be able to use tiles, you have to generate `tilemapresource.xml` in each subfolder
-
-    out/512/tilemapresource.xml
-
+```bash
+out/512/tilemapresource.xml
+```
 At the moment, automatic `tilemapresource.xml` generator is yet to be done
- 
 Refer to http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification for specs
 
-Example for 256x256 tiles:
+#### Example for 256x256 tiles:
 
     <?xml version="1.0" encoding="utf-8"?>
     <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
@@ -64,7 +65,7 @@ Example for 256x256 tiles:
       </TileSets>
     </TileMap>
 
-Example for 512x512 tiles:
+#### Example for 512x512 tiles:
 
     <?xml version="1.0" encoding="utf-8"?>
     <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
@@ -84,7 +85,7 @@ Example for 512x512 tiles:
       </TileSets>
     </TileMap>
 
-Example for 1024x1024 tiles:
+#### Example for 1024x1024 tiles:
 
     <?xml version="1.0" encoding="utf-8"?>
     <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
@@ -103,7 +104,7 @@ Example for 1024x1024 tiles:
       </TileSets>
     </TileMap>
         
-Example for 2048x2048 tiles:
+#### Example for 2048x2048 tiles:
 
     <?xml version="1.0" encoding="utf-8"?>
     <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
@@ -122,7 +123,7 @@ Example for 2048x2048 tiles:
     </TileMap>
     
 
-CesiumJS initialization
+#### CesiumJS initialization
 
     var widget = new Cesium.CesiumWidget('cesium', {
       clock: new Cesium.Clock({
